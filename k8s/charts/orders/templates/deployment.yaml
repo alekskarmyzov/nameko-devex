@@ -17,7 +17,7 @@ spec:
         app: {{ .Chart.Name }}
     spec:
       containers:
-      - image: nameko/nameko-example-orders:{{ .Values.image.tag }}
+      - image: {{ .Values.image.image }}:{{ .Values.image.tag }}
         name: {{ .Chart.Name }}
         env:
           - name: DB_HOST

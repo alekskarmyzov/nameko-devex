@@ -1,0 +1,20 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: 
+  region: eu-central-1
+  version: '1.21'  
+vpc:
+  id: vpc-06ba846d 
+  subnets:
+    public:
+      eu-central-1a: { id: subnet-96ac4dfc }
+      eu-central-1b: { id: subnet-767f230b }
+      eu-central-1c: { id: subnet-d65c7f9b }
+managedNodeGroups:
+  - name: nameko-devex-ng-1
+    instanceType: t3.medium
+    # availabilityZones: ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
+    labels: { ingress-ready: 'true' }
+    desiredCapacity: 4
+    volumeSize: 20
