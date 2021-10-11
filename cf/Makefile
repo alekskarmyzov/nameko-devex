@@ -27,4 +27,4 @@ cf-auth:
 	cf auth admin "$${admin_pass}"
 	cf create-org nameko
 	cf create-space $(NAMESPACE) -o nameko
-	cf target -o nameko -s $(ENDPOINT)
+	cf target -o nameko -s $(NAMESPACE)
