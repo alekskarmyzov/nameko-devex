@@ -60,6 +60,7 @@ echo "Using prefix: $PREFIX"
 
 # Deploying App(s) in CF
 echo "Deploying Application: ${PREFIX} namekoexample"
+cd ..
 cp manifest.local.yml manifest.local.${PREFIX}.yml
 
 

@@ -19,7 +19,7 @@ applications:
     <<: *defaults
     no-route: false
     health-check-type: port
-    command: bash ./cf/cf_run_local.sh gateway.service products.service orders.service
+    command: bash ./cf_run_local.sh gateway.service products.service orders.service
 
 # Majestic Microservice (need to uncomment above)
 # applications:
