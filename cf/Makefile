@@ -20,3 +20,9 @@ cf-run-side-services:
 
 cf-remove-side-services:
 	PREFIX=$(NAMESPACE) docker-compose -f docker-compose-side-services.yml down
+
+cf-auth:
+	cf api --skip-ssl-validation $(ENDPOINT)
+	admin_pass=$$(kubectl get secret --namespace kubecf var-cf-admin-password -o jsonpath='{.data.password}' | base64 --decode)
+	cf auth admin "$${admin_pass}"
+	
