@@ -9,10 +9,10 @@ cf-delete-cluster:
 	kind delete cluster --name kubecf
 
 cf-deploy-app:
-	../devops/nex-deploy-local.sh $(NAMESPACE)
+	./nex-deploy-local.sh $(NAMESPACE)
 
 cf-undeploy-app:
-	../devops/nex-undeploy-local.sh $(NAMESPACE)
+	./nex-undeploy-local.sh $(NAMESPACE)
 
 cf-run-side-services:
 	cd ..

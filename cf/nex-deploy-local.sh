@@ -52,11 +52,11 @@ echo "Using prefix: $PREFIX"
 # fi
 
 # Creating Backing services (may fail if it is already there)
-echo "Creating backing service for ${PREFIX}-namekoexample"
-cf cups ${PREFIX}-rabbitmq -p '{"host":"3.64.162.116","port":"15673"}' &
-cf cups ${PREFIX}-postgres -p '{"host":"3.64.162.116","port":"5433","username":"postgres","password":"password"}' &
-cf cups ${PREFIX}-redis -p '{"host":"3.64.162.116","port":"6380"}' &
-wait
+# echo "Creating backing service for ${PREFIX}-namekoexample"
+# cf cups ${PREFIX}-rabbitmq -p '{"host":"3.64.162.116","port":"15673"}' &
+# cf cups ${PREFIX}-postgres -p '{"host":"3.64.162.116","port":"5433","username":"postgres","password":"password"}' &
+# cf cups ${PREFIX}-redis -p '{"host":"3.64.162.116","port":"6380"}' &
+# wait
 
 # Deploying App(s) in CF
 echo "Deploying Application: ${PREFIX} namekoexample"
