@@ -1,0 +1,6 @@
+system_domain: 172.18.0.2.nip.io
+
+services:
+  router:
+    externalIPs:
+    - 172.18.0.2

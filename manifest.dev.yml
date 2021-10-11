@@ -7,15 +7,15 @@ defaults: &defaults
   health-check-type: process
   no-route: true
   services:
-    - nex-rabbitmq
-    - nex-postgres
-    - nex-redis
+    - dev-rabbitmq
+    - dev-postgres
+    - dev-redis
   env:
     APP_ENV: HelloWorld
 
 # Majestic Monolith - All in One
 applications:
-  - name: nex-namekoexample
+  - name: dev-namekoexample
     <<: *defaults
     no-route: false
     health-check-type: port
@@ -23,21 +23,21 @@ applications:
 
 # Majestic Microservice (need to uncomment above)
 # applications:
-#   - name: nex-namekoexample
+#   - name: dev-namekoexample
 #     <<: *defaults
 #     no-route: false
 #     health-check-type: port
 #     memory: 128M
 #     command: bash ./cf_run.sh gateway.service 
 
-#   - name: nex-namekoexample-orders
+#   - name: dev-namekoexample-orders
 #     <<: *defaults
 #     no-route: true
 #     health-check-type: process
 #     memory: 128M
 #     command: bash ./cf_run.sh orders.service
 
-#   - name: nex-namekoexample-products
+#   - name: dev-namekoexample-products
 #     <<: *defaults
 #     no-route: true
 #     health-check-type: process
